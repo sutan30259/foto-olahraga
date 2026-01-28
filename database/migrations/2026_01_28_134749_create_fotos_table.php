@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fotos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pesanan_id')->constrained()->onDelete('cascade');
+            $table->foreignId('pesanan_id')->constrained('pesanans')->onDelete('cascade');
             $table->string('path_foto'); //Alamat file foto di storage
             $table->timestamps();
         });
